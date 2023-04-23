@@ -5,7 +5,8 @@ dotenv.config('../../.env');
 
 const dev = {
     app: {
-        port: process.env.APP_PORT
+        port: process.env.APP_PORT,
+        url: process.env.DEV_APP_URL
     },
     db: {
         host: process.env.DEV_DB_HOST,
@@ -17,7 +18,8 @@ const dev = {
 
 const prod = {
     app: {
-        port: process.env.APP_PORT
+        port: process.env.APP_PORT,
+        url: process.env.PROD_APP_URL
     },
     db: {
         host: process.env.PROD_DB_HOST,

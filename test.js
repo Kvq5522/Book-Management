@@ -1,5 +1,7 @@
 const passport = require('./src/config/config.passport');
 const { User } = require('./src/models/user.model');
+const { Recovery } = require('./src/models/recover.model');
+const sendMail = require('./src/utils/sendMail');
 
 require('./src/dbs/init.mongoose')
 
@@ -20,3 +22,13 @@ require('./src/dbs/init.mongoose')
 
 //     console.log(user);
 // });
+
+const test = async () => {
+    const recover = await Recovery.findOne({email: 'vinhkhangquach@gmail.com'});
+
+    console.log(recover);
+}
+
+test();
+
+    

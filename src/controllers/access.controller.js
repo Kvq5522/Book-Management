@@ -1,8 +1,14 @@
-const { signIn } = require('../services/access.services');
+const { signIn, sendRecoveryEmail, recoverPassword } = require('../services/access.services');
 
 class AccessController {
     signIn = async (req, res, next) => {
         const { email, password } = req.body;
+
+        if (req.isAuthenticated()) {
+            return res.status(400).json({
+                message: 'You are already logged in',
+            });
+        }
 
         if (!email || !password) {
             return res.status(400).json({
@@ -23,7 +29,46 @@ class AccessController {
 
     signOut = async (req, res, next) => {
         req.logout();
+        res.send('Sign out successfully');
         res.redirect('/');
+    }
+
+    sendRecoveryEmail = async (req, res, next) => {
+        const { email } = req.body;
+
+        if (!email) {
+            return res.status(400).json({
+                message: 'Email is required'
+            });
+        }
+
+        const sentMail = await sendRecoveryEmail(email);
+
+        sentMail ? res.status(200).json({
+            message: 'Email sent successfully'
+        }) : res.status(400).json({
+            message: 'Email not found'
+        });
+    }
+
+    recoverPassword = async (req, res, next) => {
+        const {token, password } = req.body;
+        const userId = req.params.id;
+
+        if (!token || !password) {
+            return res.status(400).json({
+                message: 'Email, token or password is missing'
+            });
+        }
+
+        const recovery = recoverPassword(userId, token, password);
+
+        recovery ? res.status(200).json({
+            message: 'Password changed successfully'
+        }) : res.status(400).json({
+            message: 'Invalid email, token or password'
+        });
+
     }
 };
 
