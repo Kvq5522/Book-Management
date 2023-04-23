@@ -28,9 +28,15 @@ class AccessController {
     }
 
     signOut = async (req, res, next) => {
-        req.logout();
-        res.send('Sign out successfully');
-        res.redirect('/');
+        req.logout((err) => {
+            if (err) {
+                return res.status(400).json({
+                    message: 'Sign out failed',
+                });
+            }
+
+            res.send('Sign out successfully');
+        });
     }
 
     sendRecoveryEmail = async (req, res, next) => {
@@ -63,12 +69,14 @@ class AccessController {
 
         const recovery = recoverPassword(userId, token, password);
 
-        recovery ? res.status(200).json({
-            message: 'Password changed successfully'
-        }) : res.status(400).json({
-            message: 'Invalid email, token or password'
-        });
-
+        recovery.then((data) => {
+            return data ? res.status(200).json({
+                message: 'Password changed successfully'
+            }) : res.status(400).json({
+                message: 'Invalid email, token or password'
+            });
+    
+        })
     }
 };
 

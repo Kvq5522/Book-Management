@@ -1,6 +1,6 @@
 const passport = require('./src/config/config.passport');
 const { User } = require('./src/models/user.model');
-const { Recovery } = require('./src/models/recover.model');
+const { Recovery } = require('./src/models/recovery.model');
 const sendMail = require('./src/utils/sendMail');
 
 require('./src/dbs/init.mongoose')

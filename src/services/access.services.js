@@ -1,5 +1,5 @@
 const { User } = require('../models/user.model');
-const { Recovery } = require('../models/recover.model');
+const { Recovery } = require('../models/recovery.model');
 const passport = require('../config/config.passport');
 const crypto = require('crypto');
 const sendMail = require('../utils/sendMail');
@@ -14,16 +14,28 @@ class AccessService {
                 password
             })
 
-            req.logIn(user, (err) => {
+            passport.authenticate('local', async (err, user, info) => {
                 if (err) {
                     console.error(err);
                     return reject(err);
                 }
-
-                passport.authenticate('local')(req, res, () => {
+            
+                if (!user) {
+                    return reject(info.message);
+                }
+            
+                await req.logIn(user, (err) => {
+                    if (err) {
+                    console.error(err);
+                    return reject(err);
+                    }
+            
                     return resolve(user);
                 });
-            });
+            })(req, res, next);
+        }).catch(err => {
+            console.error(err);
+            return null;
         });
     };
 
@@ -42,7 +54,7 @@ class AccessService {
             token: genToken
         }
 
-        Recovery.findOneAndDelete({email: email})
+        await Recovery.findOneAndDelete({email: email})
             .catch(err => {
                 console.error(err);
                 return null;
@@ -74,7 +86,9 @@ class AccessService {
     };
 
     static recoverPassword = async (userId, token, password) => {
-        const recoveryInfo = await Recovery.findOne({userId: userId, token: token}).lean();
+        const recoveryInfo = await Recovery.findOne({userId: userId, token: token});
+
+        console.log(recoveryInfo + ' step 1')
 
         if (!recoveryInfo) {
             return null;
@@ -95,15 +109,25 @@ class AccessService {
                 console.error(err);
                 return null;
             });
+
+        console.log(user)
         
-        user.setPassword(password, (err, user) => {
+        await user.setPassword(password, async (err, user) => {
             if (err) {
                 console.error(err);
                 return null;
             }
 
-            user.save();
+            await user.save();
         });
+
+        if (user) {
+            await Recovery.findOneAndDelete({userId: userId})
+                .catch(err => {
+                    console.error(err);
+                    return null;
+                });
+        }
 
         return user ? user : null;
     }
