@@ -1,3 +1,5 @@
+"use strict";
+
 const { User } = require('../models/user.model');
 const { Recovery } = require('../models/recovery.model');
 const passport = require('../config/config.passport');
@@ -88,8 +90,6 @@ class AccessService {
     static recoverPassword = async (userId, token, password) => {
         const recoveryInfo = await Recovery.findOne({userId: userId, token: token});
 
-        console.log(recoveryInfo + ' step 1')
-
         if (!recoveryInfo) {
             return null;
         }
@@ -109,8 +109,6 @@ class AccessService {
                 console.error(err);
                 return null;
             });
-
-        console.log(user)
         
         await user.setPassword(password, async (err, user) => {
             if (err) {

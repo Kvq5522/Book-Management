@@ -1,3 +1,5 @@
+'use strict';
+
 const { signIn, sendRecoveryEmail, recoverPassword } = require('../services/access.services');
 
 class AccessController {
