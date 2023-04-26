@@ -25,10 +25,10 @@
             <div class="content d-flex flex-column align-content-center">
                 <h2 class="text align-self-center">Đăng nhập</h2>
                 
-                <form method="post" class="form align-self-center">
+                <div class="form align-self-center">
                     <div class="form-group">
                         <img src="/images/identity.png" class="image">
-                        <input type="text" id="email" name="email" class="input-field" placeholder=" " autocomplete="off">
+                        <input type="text" id="email" name="email" class="input-field" placeholder="">
                         <label for="username" class="label">Tài khoản</label>
                         <div class="checkName"></div>
                     </div>
@@ -45,20 +45,15 @@
                         </div>
                     </div>
                     <div class="d-flex flex-row justify-content-center">
-                        <input type="submit" formaction="/access/signin" value="Đăng nhập" class="submit align-self-center mt-4">
+                        <!-- <input type="submit" formaction="/access/signin" value="Đăng nhập" class="submit align-self-center mt-4"> -->
+                        <button class="submit align-self-center mt-4" id="signInBtn">Đăng nhập</button>
                     </div>
-                </form>
+                </div>
                 
-                <!--{{#if error}}
-                    <div class="alert alert-danger d-flex align-items-center mt-1 alert-dismissible" role="alert"> 
-                        <i class="fas fa-exclamation-triangle danger_icon"></i> 
-                        <div> {{message}} </div>
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
-                {{/if}} -->
             </div>
         </div>
     </div>
+    <script src="/scripts/signIn.js"></script>
 </body>
 
 </html>
