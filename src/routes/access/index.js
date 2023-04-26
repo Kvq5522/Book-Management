@@ -8,7 +8,7 @@ router.get('/signin', getSignIn);
 
 router.post('/signin', signIn);
 
-router.post('/signout', signOut);
+router.get('/signout', signOut);
 
 router.get('/forget-password', getForgetPassword);
 
