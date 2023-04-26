@@ -21,6 +21,10 @@ class RenderController {
     getBookPage = async (req, res) => {
         res.render('dashboardBook');
     }
+    
+    getCategoryPage = async (reg, res) =>{
+        res.render('dashboardCategory')
+    }
 }
 
 module.exports = new RenderController();

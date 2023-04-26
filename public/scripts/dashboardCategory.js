@@ -9,4 +9,4 @@ toggleButton.onclick = function () {
 };
 
 //others
-let navbar_highlight = document.getElementById('home-link').classList.add('active');
+let navbar_highlight = document.getElementById("category-link").classList.add("active");

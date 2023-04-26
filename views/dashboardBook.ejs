@@ -23,7 +23,7 @@
             <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
                 <div class="d-flex align-items-center">
                     <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
-                    <h2 class="fs-2 m-0">Mục Lục</h2>
+                    
                 </div>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -32,16 +32,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 
-                    <div class="navigation">
-                        <div class="n1">
-                            <div class="search">
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                                <input type="text" placeholder="Tìm Kiếm">
-                            </div>
-                        </div>
-                        
-                       
-                    </div>
+                  
                     
                
                 
@@ -63,66 +54,114 @@
             </nav>
 
             <main>
-                <section id="add-book" style="display:none">
-                  <h2>Thêm sách</h2>
-                  <form>
-                    <label for="title">Thể loại:</label>
-                    <input type="text" id="title" name="title" required>
-                    <label for="author">Tác giả:</label>
-                    <input type="text" id="author" name="author" required>
-                    <label for="isbn">Giá:</label>
-                    <input type="text" id="isbn" name="isbn" required>
-                    <button type="submit">Add</button>
-                    <button id="close-add0button"> x </button>
-                  </form>
-                </section> 
-                <<table id="book-table">
+                <div class="navigation">
+                        
+                    <div class="search-container">
+                        <input type="text" class="search-container" placeholder="Tìm kiếm...">
+                        <button type="submit" class="search"><i class="fa-solid fa-magnifying-glass"></i></button>
+                      </div>
+                </div>
+
+                <div class="addbook">
+                  <section id="add-book" style="display:none">
+                    <div>
+                      <h2>Thêm sách</h2>
+                    </div>
+                    <div>
+                      <button id="close-add-button" style="float: right;"> Đóng </button>
+                    </div>
+                    <div class="form-container">
+                      <form>
+                        <div class="form-row">
+                          <label for="name">Tên:</label>
+                          <input type="text" id="name" name="title" required>
+                        </div>
+                        <div class="form-row">
+                          <label for="title">Thể loại:</label>
+                          <input type="text" id="title" name="title" required>
+                        </div>
+                        <div class="form-row">
+                          <label for="author">Tác giả:</label>
+                          <input type="text" id="author" name="author" required>
+                        </div>
+                        <div class="form-row">
+                          <label for="number">Số lượng:</label>
+                          <input type="text" id="number" name="title" required>
+                        </div>
+                        <div class="form-row">
+                          <label for="price">Giá:</label>
+                          <input type="text" id="price" name="isbn" required>
+                        </div>
+                        <button type="submit">Thêm</button>
+                      </form>
+                    </div>
+                  </section> 
+                </div>
+                
+
+              </main>
+                <table id="book-table">
                     <thead>
                       <tr>
-                        <th>Name</th>
-                        <th>Genre</th>
-                        <th>Author</th>
-                        <th>Price</th>
+                        <th>Tên sách</th>
+                        <th>Thể loại sách</th>
+                        <th>Tác giả</th>
+                        <th>Số lượng</th>
+                        <th>Giá</th>
                         <th></th>
                         <th></th>
                       </tr>
                     </thead>
                     <tbody>
+                        <button id="add-btn">Thêm sách</button>
                       <tr>
-                        <td><input type="text" name="name"></td>
-                        <td><input type="text" name="genre"></td>
-                        <td><input type="text" name="author"></td>
-                        <td><input type="text" name="price"></td>
-                        <td><button class="edit-button">Edit</button></td>
-                        <td><button class="delete-button">Delete</button></td>
+                        <td>Không Gia Đình</td>
+                        <td>Gia Đình</th>
+                        <td>Hector Mallor</td>
+                        <td>10</td>
+                        <td>80.000VND</td>
+                        <td><button class="edit-button" id="edit-btn">Chỉnh sửa</button></td>
+                        <td><button class="delete-button" id="delete-btn">Xóa</button></td>
                       </tr>
                     </tbody>
                   </table>
-                  <button id="add-btn">Add Book</button>
-                <!-- <section id="edit-book">
-                  <h2>Edit Book</h2>
-                  <form>
-                    <label for="edit-title">Title:</label>
-                    <input type="text" id="edit-title" name="edit-title" required>
-                    <label for="edit-author">Author:</label>
-                    <input type="text" id="edit-author" name="edit-author" required>
-                    <label for="edit-isbn">ISBN:</label>
-                    <input type="text" id="edit-isbn" name="edit-isbn" required>
-                    <button type="submit">Save</button>
-                  </form>
-                </section>
-                <section id="search-book">
-                  <h2>Search Book</h2>
-                  <form>
-                    <label for="search-title">Title:</label>
-                    <input type="text" id="search-title" name="search-title">
-                    <label for="search-author">Author:</label>
-                    <input type="text" id="search-author" name="search-author">
-                    <label for="search-isbn">ISBN:</label>
-                    <input type="text" id="search-isbn" name="search-isbn">
-                    <button type="submit">Search</button>
-                  </form>
-                </section> -->
+                 
+                  <div class="edit-book">
+                    <section id="edit-book" style="display: none;">
+                      <div>
+                        <h2>Chỉnh sửa sách</h2>
+                      </div>
+                      <div>
+                        <button id="close-edit-btn" style="float: right;">Đóng</button>
+                      </div>
+                      <div class="form-container">
+                        <form>
+                          <div class="form-row">
+                            <label for="edit-name">Tên:</label>
+                            <input type="text" id="edit-name" name="edit-title" required>
+                          </div>
+                          <div class="form-row">
+                            <label for="edit-title">Thể loại:</label>
+                            <input type="text" id="edit-title" name="edit-title" required>
+                          </div>
+                          <div class="form-row">
+                            <label for="edit-author">Tác giả:</label>
+                            <input type="text" id="edit-author" name="edit-author" required>
+                          </div>
+                          <div class="form-row">
+                            <label for="edit-number">Số lượng:</label>
+                            <input type="text" id="edit-number" name="edit-number" required>
+                          </div>
+                          <div class="form-row">
+                            <label for="edit-price">Giá:</label>
+                            <input type="text" id="edit-price" name="edit-price" required>
+                          </div>
+                          <button type="submit">Lưu</button>
+                        </form>
+                      </div>
+                    </section>
+                  </div>
+           
               </main>
 
             
