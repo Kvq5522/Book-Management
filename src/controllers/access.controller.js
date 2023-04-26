@@ -1,6 +1,6 @@
 'use strict';
 
-const { signIn, sendRecoveryEmail, recoverPassword } = require('../services/access.services');
+const { signIn, sendRecoveryEmail, recoverPassword } = require('../services/access.service');
 
 class AccessController {
     signIn = async (req, res, next) => {

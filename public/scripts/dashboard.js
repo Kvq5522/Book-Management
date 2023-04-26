@@ -1,3 +1,5 @@
+'use strict';
+
 let el = document.getElementById("wrapper");
 let toggleButton = document.getElementById("menu-toggle");
 
