@@ -15,7 +15,11 @@ class RenderController {
     }
 
     getDashboard = async (req, res) => {
-        res.render('dashboard')
+        res.render('dashboard');
+    }
+
+    getBookPage = async (req, res) => {
+        res.render('dashboardBook');
     }
 }
 
