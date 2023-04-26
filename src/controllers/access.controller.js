@@ -37,7 +37,7 @@ class AccessController {
                 });
             }
 
-            res.send('Sign out successfully');
+           res.redirect('/');
         });
     }
 

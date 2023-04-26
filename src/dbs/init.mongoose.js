@@ -12,9 +12,8 @@ class Database {
         if (environment === 'dev') {
             mongoose.set('debug', true);
             mongoose.set('debug', { color: true});
-        }
 
-        mongoose
+            mongoose
             .connect(`${type}://${db.host}:${db.port}/${db.name}`)
             .then(() => {
                 console.log(`Connected to ${db.name} database`);
@@ -22,6 +21,16 @@ class Database {
             .catch((err) => {
                 console.log(err);
             })
+
+            return;
+        }
+
+        type+= "+srv";
+        mongoose
+        .connect(`${type}://${db.host}/${db.name}`)
+        .then(() => {
+            console.log(`Connected to ${db.name} database`);
+        })
     }
 
     static getInstance() {

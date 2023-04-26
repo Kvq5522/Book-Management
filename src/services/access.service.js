@@ -16,7 +16,7 @@ class AccessService {
                 password
             })
 
-            passport.authenticate('local', async (err, user, info) => {
+            await passport.authenticate('local', async (err, user, info) => {
                 if (err) {
                     console.error(err);
                     return reject(err);
