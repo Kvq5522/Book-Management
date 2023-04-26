@@ -13,6 +13,10 @@ class RenderController {
         const { id } = req.params;
         res.render('recoverPassword', { userId: id });
     }
+
+    getDashboard = async (req, res) => {
+        res.render('dashboard')
+    }
 }
 
 module.exports = new RenderController();
