@@ -14,156 +14,158 @@
     margin-bottom: 16px;
   }
   
-  #close-add-button,
-  #close-edit-btn {
-    padding: 8px 12px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    color: #fff;
-    background-color: #f44336;
-  }
-  
-  
-  form label {
-    display: block;
-    margin-bottom: 8px;
-  }
-  
-  form input[type=text] {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-bottom: 16px;
-  }
-  
-  form input[type=submit] {
-    padding: 8px 12px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    color: #fff;
-    background-color: #4CAF50;
-  }
-  
-  table {
-    border-collapse: collapse;
-    width: 100%;
-  }
-  
-  th, td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  th {
-    background-color: #f2f2f2;
-  }
-  
-  td {
-    background-color: #f2f2f2;
-  }
-  
-  .edit-button, .delete-button {
-    padding: 8px 12px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    color: #fff;
-  }
-  
-  .edit-button {
-    background-color: #4CAF50;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
 
-  }
-  
-  .delete-button {
-    background-color: #f44336;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
+  /* căn lề đề mục */
+h2 {
+  margin-left: 10px;
+}
 
-  }
-  #add-btn {
-    padding: 8px 12px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    color: #fff;
-    background-color: var(--main-text-color);
-    margin-bottom: 16px;
-  }
-  #book-table td:nth-child(5) {
-    width: 100px;
-  }
+/* nút thêm mới */
+#add-category-button {
+  margin: 10px;
+  background-color: #27ae60;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
 
-  .category-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  
-  .category-list,
-  .category-form,
-  .category-actions {
-    flex-basis: 30%;
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .category-list h2,
-  .category-form h2,
-  .category-actions h2 {
-    margin-top: 0;
-  }
-  
-  .category-form label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  .category-form input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    margin-bottom: 10px;
-  }
-  
-  .button-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .button-container button {
-    background-color: blue;
-    color: white;
-    border: none;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  #cancel-category-button {
-    background-color: red;
-  }
-  
-  #category-list li {
-    margin-bottom: 5px;
-    cursor: pointer;
-  }
+/* bảng dữ liệu */
+#cate-table {
+  margin: 10px;
+  border-collapse: collapse;
+  width: 100%;
+  text-align: left;
+}
+
+/* đầu bảng */
+thead th {
+  background-color: #27ae60;
+  color: #fff;
+  padding: 10px;
+}
+
+/* ô dữ liệu */
+td {
+  padding: 10px;
+}
+
+/* nút chỉnh sửa */
+.edit-cate-button {
+  background-color: #27ae60;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* nút xóa thể loại */
+#delete-category-btn {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* Form Thêm mới */
+.category-add {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  display: none;
+  width: 400px;
+}
+
+.category-add h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.category-add input[type="text"] {
+  width: 100%;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.category-add.button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.category-add button {
+  padding: 10px 20px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #27ae60;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.category-add button:hover {
+  background-color: #27ae60;
+}
+
+/* Form sửa */
+.category-edit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  display: none;
+  width: 400px;
+}
+
+.category-edit h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.category-edit input[type="text"] {
+  width: 100%;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.category-edit .button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.category-edit  button {
+  padding: 10px 20px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #27ae60;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.category-edit  button:hover {
+  background-color: #3e8e41;
+}
+
+
   
     
   

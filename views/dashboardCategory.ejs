@@ -60,26 +60,58 @@
                 </div>
                 <div class="category-container">
                     <div class="category-list">
-                      <h2>Danh sách thể loại sách</h2>
-                      <ul id="category-list"></ul>
+                        <table id="cate-table">
+                            <h2>Danh sách thể loại sách</h2>
+                            <button type="button" id="add-category-button">Thêm thể loại mới</button>
+                            <thead>
+                            <th>Thể loại sách</th>
+                            <th>Tên sách</th>
+                            <th>Tác giả</th>
+                            <th>Số lượng</th>
+                            <th>Giá</th>
+                            <th></th>
+                            <th></th>
+                            <ul id="category-list"></ul>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Không Gia Đình</td>
+                                    <td>Gia Đình</th>
+                                    <td>Hector Mallor</td>
+                                    <td>10</td>
+                                    <td>80.000VND</td>
+                                    <td><button  type="button" class= "edit-cate-button" id="edit-cate-btn">Chỉnh sửa</button></td>
+                                    <td><button type="button" id="delete-category-btn">Xóa thể loại</button></td>
+                                  </tr>
+                            </tbody>
+                        </table>
                     </div>
-                    <div class="category-form">
-                      <h2>Thêm/Sửa thể loại sách</h2>
-                      <form id="category-form">
+                    <div class="category-add" id="category-form" style="display: none;" >
+                      <form >
+                        <h2>Thêm thể loại sách</h2>
                         <input type="hidden" id="category-id">
                         <label for="category-name">Tên thể loại:</label>
                         <input type="text" id="category-name" name="category-name" required>
                         <div class="button-container">
-                          <button type="submit" id="save-category-button">Lưu</button>
-                          <button type="button" id="cancel-category-button">Hủy</button>
+                          <button type="submit" id="save-add-category-btn">Lưu</button>
+                          <button type="button" id="cancel-add-category-btn">Hủy</button>
                         </div>
                       </form>
+                      
                     </div>
-                    <div class="category-actions">
-                      <h2>Thao tác</h2>
-                      <button type="button" id="add-category-button">Thêm thể loại mới</button>
-                      <button type="button" id="delete-category-button">Xóa thể loại</button>
+                    <div class="category-edit" id="category-edit-form" style="display: none;" >
+                        <form >
+                            <h2>Sửa thể loại sách</h2>
+                            <input type="hidden" id="category-id">
+                            <label for="category-name">Tên thể loại:</label>
+                            <input type="text" id="category-name" name="category-name" required>
+                            <div class="button-container">
+                              <button type="submit" id="save-edit-category-btn">Lưu</button>
+                              <button type="button" id="cancel-edit-category-btn">Hủy</button>
+                            </div>
+                          </form>
                     </div>
+                  
                   </div>
                   
            

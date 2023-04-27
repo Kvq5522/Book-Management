@@ -25,8 +25,8 @@ close_add_section.addEventListener('click', () =>{
 })
 
 edit_btn.addEventListener('click', ()=> {
-    let add_section = document.getElementById("edit-book");
-    add_section.style.display ='block';
+    let edit_section = document.getElementById("edit-book");
+    edit_section.style.display ='block';
 })
 
 close_edit_section.addEventListener('click', () => {
