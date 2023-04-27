@@ -54,14 +54,14 @@
                 <div class="navigation">
                         
                     <div class="search-container">
-                        <input type="text" placeholder="Tìm kiếm...">
+                        <input id="text" type="text" placeholder="Tìm kiếm...">
                         <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                       </div>
                 </div>
                 <div class="category-container">
                     <div class="category-list">
                         <table id="cate-table">
-                            <h2>Danh sách thể loại sách</h2>
+                            <h2 style="text-align: center;">Danh sách thể loại sách</h2>
                             <button type="button" id="add-category-button">Thêm thể loại mới</button>
                             <thead>
                             <th>Thể loại sách</th>
@@ -70,7 +70,7 @@
                             <th>Số lượng</th>
                             <th>Giá</th>
                             <th></th>
-                            <th></th>
+                            
                             <ul id="category-list"></ul>
                             </thead>
                             <tbody>
@@ -80,8 +80,11 @@
                                     <td>Hector Mallor</td>
                                     <td>10</td>
                                     <td>80.000VND</td>
-                                    <td><button  type="button" class= "edit-cate-button" id="edit-cate-btn">Chỉnh sửa</button></td>
-                                    <td><button type="button" id="delete-category-btn">Xóa thể loại</button></td>
+                                    <td>
+                                        <button  type="button" class= "edit-cate-button" id="edit-cate-btn">Chỉnh sửa</button>
+                                        <button type="button" class="delete-cate-button" id="delete-category-btn">Xóa thể loại</button>
+                                    </td>
+                                    
                                   </tr>
                             </tbody>
                         </table>

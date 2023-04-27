@@ -61,15 +61,14 @@
                         <button type="submit" class="search"><i class="fa-solid fa-magnifying-glass"></i></button>
                       </div>
                 </div>
-
+                <h2 style="text-align: center;">Danh sách Sách</h2>
                 <div class="addbook">
                   <section id="add-book" style="display:none">
                     <div>
+                      
                       <h2>Thêm sách</h2>
                     </div>
-                    <div>
-                      <button id="close-add-button" style="float: right;"> Đóng </button>
-                    </div>
+                    
                     <div class="form-container">
                       <form>
                         <div class="form-row">
@@ -92,7 +91,11 @@
                           <label for="price">Giá:</label>
                           <input type="text" id="price" name="isbn" required>
                         </div>
-                        <button type="submit">Thêm</button>
+                        <div>
+                          <button id="close-add-button" style="float: right;"> Đóng </button>
+                          <button type="submit">Thêm</button>
+                        </div>
+                        
                       </form>
                     </div>
                   </section> 
@@ -109,7 +112,6 @@
                         <th>Số lượng</th>
                         <th>Giá</th>
                         <th></th>
-                        <th></th>
                       </tr>
                     </thead>
                     <tbody>
@@ -120,8 +122,12 @@
                         <td>Hector Mallor</td>
                         <td>10</td>
                         <td>80.000VND</td>
-                        <td><button class="edit-button" id="edit-btn">Chỉnh sửa</button></td>
-                        <td><button class="delete-button" id="delete-btn">Xóa</button></td>
+                        <td class="button-column" colspan="2">
+                          <button class="edit-button" id="edit-btn">Chỉnh sửa</button></th>
+                          <button class="delete-button" id="delete-btn">Xóa</button></th>
+                        </td>
+                          
+                        
                       </tr>
                     </tbody>
                   </table>
@@ -132,7 +138,7 @@
                         <h2>Chỉnh sửa sách</h2>
                       </div>
                       <div>
-                        <button id="close-edit-btn" style="float: right;">Đóng</button>
+                        
                       </div>
                       <div class="form-container">
                         <form>
@@ -156,7 +162,11 @@
                             <label for="edit-price">Giá:</label>
                             <input type="text" id="edit-price" name="edit-price" required>
                           </div>
-                          <button type="submit">Lưu</button>
+                          <div class="button-container">
+                            <button type="submit">Lưu</button>
+                            <button id="close-edit-btn">Đóng</button>
+                          </div>
+                          
                         </form>
                       </div>
                     </section>
