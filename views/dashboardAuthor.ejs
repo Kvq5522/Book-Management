@@ -66,9 +66,10 @@
                 </div>
               <h2 style="text-align: center;">Quản lý tác giả</h2>
           
-             
+                
                 <table>
                   <thead>
+                    <button class="add-author-btn" id="add-author-btn">Thêm tác giả</button>
                     <tr>
                       <th>Tên tác giả</th>
                       <th>Tên sách</th>
@@ -82,7 +83,7 @@
                       <td>Sách A</td>
                       <td>hài hước</td>
                       <td>
-                        <button type="button">Chỉnh sửa</button>
+                        <button type="button" id="edit-author-btn">Chỉnh sửa</button>
                         <button type="button">xóa</button>
                       </td>
                     </tr>
@@ -91,26 +92,45 @@
                       <td>Sách B</td>
                       <td>Hành động</td>
                       <td>
-                        <button type="button">Chỉnh sửa</button>
+                        <button type="button" id="edit-author-btn" >Chỉnh sửa</button>
                         <button type="button">xóa</button>
                       </td>
                     </tr>
                   </tbody>
                 </table>
+              <div class="add-author" id="add-au" style="display: none;">
+                <aside >
+                  <h2>Thêm tác giả mới</h2>
+                  <form>
+                    <label for="name">Tên tác giả:</label>
+                    <input type="text" id="name" name="name"><br><br>
+                    <label for="book">Sách:</label>
+                    <input type="text" id="email" name="email"><br><br>
+                    <label for="Category">Thể loại:</label>
+                    <input type="tel" id="phone" name="phone"><br><br>
+                    <input type="submit" value="Thêm tác giả">
+                    <button type="button" id="close-Au-btn" >Đóng</button>
+                  </form>
+                </aside>
+              </div>
               
-              <aside style="display: none;">
-                <h2>Thêm tác giả mới</h2>
-                <form>
-                  <label for="name">Tên tác giả:</label>
-                  <input type="text" id="name" name="name"><br><br>
-                  <label for="book">Sách:</label>
-                  <input type="text" id="email" name="email"><br><br>
-                  <label for="Category">Thể loại:</label>
-                  <input type="tel" id="phone" name="phone"><br><br>
-                  <input type="submit" value="Thêm tác giả">
-                  <button type="button" >xóa</button>
-                </form>
-              </aside>
+              <div id="edit-author" style="display: none;">
+                <aside >
+                  <h2>Chỉnh sửa</h2>
+                  <form>
+                    <label for="name">Tên tác giả:</label>
+                    <input type="text" id="name" name="name"><br><br>
+                    <label for="book">Sách:</label>
+                    <input type="text" id="email" name="email"><br><br>
+                    <label for="Category">Thể loại:</label>
+                    <input type="tel" id="phone" name="phone"><br><br>
+                    <input type="submit" value="Thêm tác giả">
+                    <button type="button" id="close-edit-btn" >Đóng</button>
+                  </form>
+                </aside>
+              </div>
+
+              
             </main>
 
             
