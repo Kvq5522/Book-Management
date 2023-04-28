@@ -25,6 +25,12 @@ class RenderController {
     getCategoryPage = async (reg, res) =>{
         res.render('dashboardCategory')
     }
+
+    getAuthorPage = async (reg, res) =>{
+        res.render('dashboardAuthor')
+    }
+
+
 }
 
 module.exports = new RenderController();

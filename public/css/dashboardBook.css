@@ -160,16 +160,20 @@ table {
 
 th, td {
   padding: 12px;
-  text-align: left;
+  
   border-bottom: 1px solid #ddd;
 }
 
 th {
-  background-color: #f2f2f2;
+  text-align: center;
+  color: #f2f2f2;
+  background-color: #27ae60;
 }
-
+tbody td{
+  text-align: center;
+}
 td {
-  background-color: #f2f2f2;
+  background-color: #ffffff;
 }
 
 .edit-button, .delete-button {
@@ -184,7 +188,7 @@ td {
   background-color: #4CAF50;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  
 
 }
 
@@ -192,8 +196,7 @@ td {
   background-color: #f44336;
   align-items: center;
   justify-content: center;
-  width: 100%;
-
+  
 }
 #add-btn {
   padding: 8px 12px;
