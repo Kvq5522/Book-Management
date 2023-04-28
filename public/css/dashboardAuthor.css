@@ -1,0 +1,100 @@
+.search-container {
+  display: flex;
+  align-items: center; /* căn giữa theo chiều dọc */
+  justify-content: center; /* căn giữa theo chiều ngang */
+  width: 100%;
+  border-radius: 30px;
+  
+}
+.search-container input[type="text"] {
+  width: 80%;
+  padding: 10px;
+  border-radius: 30px;
+  border: none;
+  
+}
+.search-container button[type="submit"] {
+  width: 5%;
+  background-color: #27ae60;
+  color: #ffffff;
+  border: none;
+  padding: 10px;
+  border-radius: 30px;
+  
+}
+
+button.search:hover {
+  background-color: (var(--));
+  }
+
+/* style cho table */
+table {
+    border-collapse: collapse;
+    width: 100%;
+   
+    margin: 50px;
+  }
+  
+  
+  /* style cho table head */
+  thead {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  /* style cho table th */
+  th {
+    background-color: #27ae60;
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  thead th{
+    text-align: center;
+    color: #ffffff;
+    padding: 10px;
+  }
+  tbody td{
+    text-align: center;
+    padding: 10px;
+  }
+  /* style cho table td */
+  td {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  /* style cho button */
+  button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  
+  /* style cho button chỉnh sửa */
+  button[type="button"]:first-child {
+    background-color: #4CAF50;
+  }
+  
+  /* style cho button xóa */
+  button[type="button"]:last-child {
+    background-color: #f44336;
+  }
+
+  
+  /* style cho h2 */
+  h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  
+  
+  
