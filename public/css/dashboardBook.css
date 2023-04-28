@@ -25,7 +25,7 @@
 
 button.search:hover {
   background-color: (var(--));
-  }
+}
 
 
 #add-book{
@@ -93,21 +93,15 @@ left: 50%;
 transform: translate(-50%, -50%);
 z-index: 9999;
 border-radius: 10px;
-
-
 }
 
-#close-add-button {
+#close-add-btn {
   float: right;
 }
 #add-book form button[type="submit"] {
   float: right;
   margin-right: 10px;
 }
-
-
-
-
 
 input[type="text"] {
   padding: 10px;
@@ -118,7 +112,7 @@ h2 {
   margin-bottom: 16px;
 }
 
-#close-add-button,
+#close-add-btn,
 #close-edit-btn {
   padding: 8px 12px;
   border: none;
@@ -195,7 +189,7 @@ td {
   width: 100%;
 
 }
-#add-btn {
+#add-btn, #submit-add-btn {
   padding: 8px 12px;
   border: none;
   border-radius: 4px;
@@ -207,8 +201,6 @@ td {
 #book-table td:nth-child(5) {
   width: 100px;
 }
-
-
 
 #edit-book {
   height: 550px;
@@ -241,8 +233,6 @@ td {
   margin-bottom: 10px;
 }
 
-
-
 #edit-book  form input[type="text"], #edit-book  form button[type="submit"] {
   padding: 8px; /* Đặt khoảng cách giữa các phần tử input và button */
   border-radius: 5px; /* Đặt bo góc cho input và button */
@@ -259,11 +249,9 @@ td {
 }
 
 #edit-book form button[type="submit"] {
-  
   background-color: #4CAF50; /* Đặt màu nền cho button */
   color: white; /* Đặt màu chữ cho button */
   cursor: pointer; /* Đặt con trỏ chuột thành con trỏ tay */
-  
 }
 
 #edit-book form button[type="submit"]:hover {

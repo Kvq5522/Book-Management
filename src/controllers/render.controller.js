@@ -1,5 +1,7 @@
 "use strict";
 
+const { getBookList } = require("../services/book.service");
+
 class RenderController {
     getSignIn = async (req, res) => {
         res.render('signIn');
@@ -19,7 +21,7 @@ class RenderController {
     }
 
     getBookPage = async (req, res) => {
-        res.render('dashboardBook');
+        res.render('dashboardBook', { bookList: await getBookList() });
     }
     
     getCategoryPage = async (reg, res) =>{

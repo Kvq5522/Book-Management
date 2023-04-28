@@ -31,11 +31,7 @@
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                
-                  
-                    
-               
-                
+            
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item dropdown">
@@ -65,7 +61,6 @@
                 <div class="addbook">
                   <section id="add-book" style="display:none">
                     <div>
-                      
                       <h2>Thêm sách</h2>
                     </div>
                     
@@ -73,34 +68,34 @@
                       <form>
                         <div class="form-row">
                           <label for="name">Tên:</label>
-                          <input type="text" id="name" name="title" required>
+                          <input type="text" id="add-name" name="add-name">
                         </div>
                         <div class="form-row">
-                          <label for="title">Thể loại:</label>
-                          <input type="text" id="title" name="title" required>
+                          <label for="category">Thể loại:</label>
+                          <input type="text" id="add-category" name="add-category">
                         </div>
                         <div class="form-row">
                           <label for="author">Tác giả:</label>
-                          <input type="text" id="author" name="author" required>
+                          <input type="text" id="add-author" name="add-author">
                         </div>
                         <div class="form-row">
                           <label for="number">Số lượng:</label>
-                          <input type="text" id="number" name="title" required>
+                          <input type="text" id="add-number" name="add-number">
                         </div>
                         <div class="form-row">
                           <label for="price">Giá:</label>
-                          <input type="text" id="price" name="isbn" required>
+                          <input type="text" id="add-price" name="add-price">
                         </div>
                         <div>
-                          <button id="close-add-button" style="float: right;"> Đóng </button>
-                          <button type="submit">Thêm</button>
+                          <button id="close-add-btn" style="float: right;"> Đóng </button>
+                          <button id="submit-add-btn">Thêm</button>
                         </div>
-                        
                       </form>
                     </div>
                   </section> 
                 </div>
                 
+              <button id="add-btn">Thêm sách</button>
 
               </main>
                 <table id="book-table">
@@ -115,20 +110,19 @@
                       </tr>
                     </thead>
                     <tbody>
-                        <button id="add-btn">Thêm sách</button>
-                      <tr>
-                        <td>Không Gia Đình</td>
-                        <td>Gia Đình</th>
-                        <td>Hector Mallor</td>
-                        <td>10</td>
-                        <td>80.000VND</td>
-                        <td class="button-column" colspan="2">
-                          <button class="edit-button" id="edit-btn">Chỉnh sửa</button></th>
-                          <button class="delete-button" id="delete-btn">Xóa</button></th>
-                        </td>
-                          
-                        
-                      </tr>
+                      <% for (let i = 0; i < bookList.length; i++) { %>
+                        <tr>
+                            <td id="name-<%= i %>"><%= bookList[i].name %> </td>
+                            <td id="category-<%= i %>"><%= bookList[i].category %> </td>
+                            <td id="author-<%= i %>"><%= bookList[i].author %> </td>
+                            <td id="number-<%= i %>"><%= bookList[i].quantity %> </td>
+                            <td id="price-<%= i %>"><%= bookList[i].price %> </td>
+                            <td class="button-column" colspan="2">
+                              <button class="edit-button" id="edit-btn-<%= i %> ">Chỉnh sửa</button>
+                              <button class="delete-button" id="delete-btn-<%= i %>">Xóa</button>
+                            </td>
+                        </tr>
+                      <% } %>
                     </tbody>
                   </table>
                  
@@ -144,11 +138,11 @@
                         <form>
                           <div class="form-row">
                             <label for="edit-name">Tên:</label>
-                            <input type="text" id="edit-name" name="edit-title" required>
+                            <input type="text" id="edit-name" name="edit-name" required>
                           </div>
                           <div class="form-row">
-                            <label for="edit-title">Thể loại:</label>
-                            <input type="text" id="edit-title" name="edit-title" required>
+                            <label for="edit-category">Thể loại:</label>
+                            <input type="text" id="edit-category" name="edit-category" required>
                           </div>
                           <div class="form-row">
                             <label for="edit-author">Tác giả:</label>
@@ -180,7 +174,7 @@
     </div>
     <!-- /#page-content-wrapper -->
     </div>
-    <script src="/scripts/bootstrap.bundle.min.js"></script>
+    <script src="/scripts/bootstrap/bootstrap.bundle.min.js"></script>
     <script src="/scripts/dashboardBook.js"></script>
 </body>
 </html>
