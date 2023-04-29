@@ -53,8 +53,8 @@
                 <div class="navigation">
                         
                     <div class="search-container">
-                        <input type="text" class="search-container" placeholder="Tìm kiếm...">
-                        <button type="submit" class="search"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        <input type="text" class="search-container" id="search-content" placeholder="Tìm kiếm...">
+                        <button type="submit" class="search" id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
                       </div>
                 </div>
                 <h2 style="text-align: center;">Danh sách Sách</h2>
@@ -88,7 +88,7 @@
                         </div>
                         <div>
                           <button id="close-add-btn" style="float: right;"> Đóng </button>
-                          <button id="submit-add-btn">Thêm</button>
+                          <button type="submit" id="submit-add-btn">Thêm</button>
                         </div>
                       </form>
                     </div>
@@ -112,14 +112,14 @@
                     <tbody>
                       <% for (let i = 0; i < bookList.length; i++) { %>
                         <tr>
-                            <td id="name-<%= i %>"><%= bookList[i].name %> </td>
-                            <td id="category-<%= i %>"><%= bookList[i].category %> </td>
-                            <td id="author-<%= i %>"><%= bookList[i].author %> </td>
-                            <td id="number-<%= i %>"><%= bookList[i].quantity %> </td>
-                            <td id="price-<%= i %>"><%= bookList[i].price %> </td>
+                            <td id="name-<%= i %>"><%= bookList[i].name %></td>
+                            <td id="category-<%= i %>"><%= bookList[i].category %></td>
+                            <td id="author-<%= i %>"><%= bookList[i].author %></td>
+                            <td id="number-<%= i %>"><%= bookList[i].quantity %></td>
+                            <td id="price-<%= i %>"><%= bookList[i].price %></td>
                             <td class="button-column" colspan="2">
-                              <button class="edit-button" id="edit-btn-<%= i %> ">Chỉnh sửa</button>
-                              <button class="delete-button" id="delete-btn-<%= i %>">Xóa</button>
+                              <button class="edit-button" id="edit-btn-<%= i %>">Chỉnh sửa</button>
+                              <button class="delete-button" id="delete-btn-<%= i%>">Xóa</button>
                             </td>
                         </tr>
                       <% } %>
@@ -138,29 +138,28 @@
                         <form>
                           <div class="form-row">
                             <label for="edit-name">Tên:</label>
-                            <input type="text" id="edit-name" name="edit-name" required>
+                            <input type="text" id="edit-name" name="edit-name">
                           </div>
                           <div class="form-row">
                             <label for="edit-category">Thể loại:</label>
-                            <input type="text" id="edit-category" name="edit-category" required>
+                            <input type="text" id="edit-category" name="edit-category">
                           </div>
                           <div class="form-row">
                             <label for="edit-author">Tác giả:</label>
-                            <input type="text" id="edit-author" name="edit-author" required>
+                            <input type="text" id="edit-author" name="edit-author">
                           </div>
                           <div class="form-row">
                             <label for="edit-number">Số lượng:</label>
-                            <input type="text" id="edit-number" name="edit-number" required>
+                            <input type="text" id="edit-number" name="edit-number">
                           </div>
                           <div class="form-row">
                             <label for="edit-price">Giá:</label>
-                            <input type="text" id="edit-price" name="edit-price" required>
+                            <input type="text" id="edit-price" name="edit-price">
                           </div>
                           <div class="button-container">
-                            <button type="submit">Lưu</button>
+                            <button type="submit" id="submit-edit-btn">Lưu</button>
                             <button id="close-edit-btn">Đóng</button>
                           </div>
-                          
                         </form>
                       </div>
                     </section>

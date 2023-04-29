@@ -31,8 +31,6 @@ class RenderController {
     getAuthorPage = async (reg, res) =>{
         res.render('dashboardAuthor')
     }
-
-
 }
 
 module.exports = new RenderController();

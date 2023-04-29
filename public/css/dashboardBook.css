@@ -236,7 +236,7 @@ td {
   margin-bottom: 10px;
 }
 
-#edit-book  form input[type="text"], #edit-book  form button[type="submit"] {
+#edit-book form input[type="text"], #edit-book form button[type="submit"] {
   padding: 8px; /* Đặt khoảng cách giữa các phần tử input và button */
   border-radius: 5px; /* Đặt bo góc cho input và button */
   border: none; /* Xóa viền cho input và button */
