@@ -6,14 +6,12 @@ class BookController {
     addBook = async (req, res, next) => {
         const { name, category, author, quantity, price } = req.body;
 
-        console.log(name, category, author, quantity, price);
-
         const book = await addBook(name, category, author, quantity, price);
 
         if (book) {
             res.status(200).json({
                 message: 'Add book successfully',
-                book: book
+                metadata: book
             });
         } else {
             res.status(500).json({
@@ -36,12 +34,12 @@ class BookController {
     }
 
     editBook = async (req, res, next) => {
-        let { name, category, author, quantity, price } = req.body;
+        let { oldName, name, category, author, quantity, price } = req.body;
 
         quantity = parseInt(quantity) < 0 ? undefined : parseInt(quantity);
         price = parseInt(price) < 0 ? undefined : parseInt(price);
 
-        const book = await editBook(name, category, author, quantity, price);
+        const book = await editBook(oldName, name, category, author, quantity, price);
 
         return book ? res.status(200).json({
             message: 'Edit book successfully',

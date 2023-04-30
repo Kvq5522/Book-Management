@@ -23,7 +23,8 @@ add_btn.addEventListener('click', () => {
     add_section.style.display = 'block';
 })
 
-close_add_section.addEventListener('click', () =>{
+close_add_section.addEventListener('click', (event) =>{
+    event.preventDefault();
     let add_section = document.getElementById("add-book");
     add_section.style.display = "none";
 })
@@ -101,7 +102,14 @@ submit_add_btn.addEventListener('click', async (event) => {
                         let add_section = document.getElementById("add-book");
                         add_section.style.display = "none";
                         alert('Add book successfully');
-                        await addBookToTable(name, category, author, number, price);
+                        let fetched = data.metadata;
+                        await addBookToTable(fetched.name, fetched.category, fetched.author, fetched.number, fetched.price);
+
+                        document.getElementById("add-name").value = '';
+                        document.getElementById("add-category").value = '';
+                        document.getElementById("add-author").value = '';
+                        document.getElementById("add-number").value = '';
+                        document.getElementById("add-price").value = '';
                     } else {
                         alert('Add book failed');
                     }
@@ -117,6 +125,7 @@ submit_edit_btn.addEventListener('click', async (event) => {
     event.preventDefault();
     let edit_name = document.getElementById("edit-name");
     let name = edit_name.value;
+    let oldName = edit_name.getAttribute("old-name");
     let edit_category = document.getElementById("edit-category");
     let category = edit_category.value;
     let edit_author = document.getElementById("edit-author");
@@ -133,6 +142,7 @@ submit_edit_btn.addEventListener('click', async (event) => {
                 'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
+                    oldName: oldName,
                     name: name,
                     category: category,
                     author: author,
@@ -146,7 +156,9 @@ submit_edit_btn.addEventListener('click', async (event) => {
                     let edit_section = document.getElementById("edit-book");
                     edit_section.style.display = "none";
                     alert('Edit book successfully');
-                    await editBookInTable(name, category, author, number, price);
+                    let edited = data.metadata;
+                    console.log(edited);
+                    await editBookInTable(oldName, edited.name, edited.category, edited.author, edited.number, edited.price);
                 } else {
                     alert('Edit book failed');
                 }
@@ -211,12 +223,13 @@ const addBookToTable = async (name, category, author, number, price) => {
     cell6.appendChild(btn_column);
 }
 
-const editBookInTable = async (name, category, author, number, price) => {
+const editBookInTable = async (oldName, name, category, author, number, price) => {
     let table = document.getElementById("book-table");
     let table_body = table.getElementsByTagName("tbody")[0];
 
     for (let i = 0; i < table_body.rows.length; i++) {
-        if (table_body.rows[i].cells[0].innerHTML == name) {
+        if (table_body.rows[i].cells[0].innerHTML == oldName) {
+            table_body.rows[i].cells[0].innerHTML = name;
             table_body.rows[i].cells[1].innerHTML = category;
             table_body.rows[i].cells[2].innerHTML = author;
             if (number > 0) table_body.rows[i].cells[3].innerHTML = number;
@@ -251,6 +264,7 @@ async function handleEditButtonEvent(event) {
 
         let edit_name = document.getElementById("edit-name");
         edit_name.value = book_name;
+        edit_name.setAttribute("old-name", book_name);
         let edit_category = document.getElementById("edit-category");
         edit_category.value = book_category;
         let edit_author = document.getElementById("edit-author");

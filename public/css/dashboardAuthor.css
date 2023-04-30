@@ -25,153 +25,254 @@
 
 button.search:hover {
   background-color: (var(--));
-  }
+}
 
-/* style cho table */
+#add-author{
+height: 200px;
+width: 500px; /* Đặt chiều rộng cho phần tử */
+margin: 0 auto; /* Đặt lề để căn giữa theo chiều ngang */
+padding: auto; /* Đặt khoảng cách giữa các phần tử bên trong phần tử */
+position: relative; /* Đặt vị trí để có thể sử dụng các thuộc tính top, bottom, left, right */
+top: 20%; /* Đặt vị trí theo chiều dọc */
+right: -15%;
+transform: translateY(-20%);
+background-color: #f2f2f2;
+box-shadow: 0px 0px 10px #888888; 
+
+}
+
+#add-author h2 {
+text-align: left;
+float: left;
+width: 50%;
+margin-top: 0; /* Xóa khoảng cách trên đầu tiêu đề */
+font-size: 24px; /* Đặt cỡ chữ cho tiêu đề */
+}
+#add-author form label {
+text-align: justify;
+}
+.form-container {
+clear: both;
+}
+#add-author form input {
+width: 100%;
+margin-bottom: 10px;
+}
+
+#add-author form button {
+display: block;
+margin: 10px auto;
+}
+#add-author form input[type="text"], #add-author form button[type="submit"] {
+padding: 8px; /* Đặt khoảng cách giữa các phần tử input và button */
+border-radius: 5px; /* Đặt bo góc cho input và button */
+border: none; /* Xóa viền cho input và button */
+font-size: 16px; /* Đặt cỡ chữ cho input và button */
+}
+
+#add-author form button[type="submit"] {
+background-color: #4CAF50; /* Đặt màu nền cho button */
+color: white; /* Đặt màu chữ cho button */
+cursor: pointer; /* Đặt con trỏ chuột thành con trỏ tay */
+}
+
+#add-author form button[type="submit"]:hover {
+background-color: #3e8e41; /* Đặt màu nền cho button khi hover */
+}
+
+#add-author form label {
+display: block; /* Hiển thị label theo dạng khối */
+ /* Đặt khoảng cách dưới mỗi label */
+font-size: 16px; /* Đặt cỡ chữ cho label */
+}
+
+.addauthor {
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+z-index: 9999;
+border-radius: 10px;
+}
+
+#close-add-btn {
+  float: right;
+}
+#add-author form button[type="submit"] {
+  float: right;
+  margin-right: 10px;
+}
+
+input[type="text"] {
+  padding: 10px;
+  border: none;
+  width: 70%; /* chiếm 70% của bộ khung tìm kiếm */
+}
+h2 {
+  margin-bottom: 16px;
+}
+
+#close-add-btn,
+#close-edit-btn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #fff;
+  background-color: #f44336;
+}
+
+
+form label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+form input[type=text] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 16px;
+}
+
+form input[type=submit] {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #fff;
+  background-color: #4CAF50;
+}
+
 table {
-    border-collapse: collapse;
-    width: 100%;
-   
-    margin: 50px;
-  }
   
-  
-  /* style cho table head */
-  thead {
-    background-color: #f2f2f2;
-    font-weight: bold;
-  }
-  
-  /* style cho table th */
-  th {
-    background-color: #27ae60;
-    border: 1px solid #ddd;
-    padding: 8px;
-  }
-  thead th{
-    text-align: center;
-    color: #ffffff;
-    padding: 10px;
-  }
-  tbody td{
-    text-align: center;
-    padding: 10px;
-  }
-  /* style cho table td */
-  td {
-    background-color: #ffffff;
-    border: 1px solid #ddd;
-    padding: 8px;
-  }
-  
-  /* style cho button */
-  button {
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding: 8px 16px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
-    margin: 4px 2px;
-    cursor: pointer;
-  }
-  
-  /* style cho button chỉnh sửa */
-  button[type="button"]:first-child {
-    background-color: #4CAF50;
-  }
-  
-  /* style cho button xóa */
-  button[type="button"]:last-child {
-    background-color: #f44336;
-  }
+  border-collapse: collapse;
+  width: 100%;
+}
 
+th, td {
+  padding: 12px;
   
-  /* style cho h2 */
-  h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
+  border-bottom: 1px solid #ddd;
+}
 
+th {
+  text-align: center;
+  color: #f2f2f2;
+  background-color: #27ae60;
+}
+tbody td{
+  text-align: center;
+}
+td {
+  background-color: #ffffff;
+}
 
-  /* Đặt phần tử "aside" ở giữa màn hình */
-  aside {
-    position: fixed;
+.edit-button, .delete-button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.edit-button {
+  background-color: #4CAF50;
+  align-items: center;
+  justify-content: center;
+  
+
+}
+
+.delete-button {
+  background-color: #f44336;
+  align-items: center;
+  justify-content: center;
+  
+}
+#add-btn, #submit-add-btn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #fff;
+  background-color: var(--main-text-color);
+  margin-bottom: 16px;
+}
+#author-table td:nth-child(5) {
+  width: 100px;
+}
+
+#edit-author {
+  height: 200px;
+  width: 500px; /* Đặt chiều rộng cho phần tử */
+  margin: 0 auto; /* Đặt lề để căn giữa theo chiều ngang */
+  padding: 20px; /* Đặt khoảng cách giữa các phần tử bên trong phần tử */
+  position: relative; /* Đặt vị trí để có thể sử dụng các thuộc tính top, bottom, left, right */
+  top: 20%; /* Đặt vị trí theo chiều dọc */
+  right: -15%;
+  transform: translateY(-20%);
+  background-color: #f2f2f2;
+  box-shadow: 0px 0px 10px #888888; 
+
+}
+
+#edit-author  h2 {
+  text-align: left;
+  float: left;
+  width: 50%;
+  margin-top: 0; /* Xóa khoảng cách trên đầu tiêu đề */
+  font-size: 24px; /* Đặt cỡ chữ cho tiêu đề */
+}
+#edit-author form label {
+  text-align: justify;
+}
+.form-container {
+  clear: both;
+}
+#edit-author form input {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+#edit-author form input[type="text"], #edit-author form button[type="submit"] {
+  padding: 8px; /* Đặt khoảng cách giữa các phần tử input và button */
+  border-radius: 5px; /* Đặt bo góc cho input và button */
+  border: none; /* Xóa viền cho input và button */
+  font-size: 16px; /* Đặt cỡ chữ cho input và button */
+}
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button-container button {
+  margin-left: 10px;
+}
+
+#edit-author form button[type="submit"] {
+  background-color: #4CAF50; /* Đặt màu nền cho button */
+  color: white; /* Đặt màu chữ cho button */
+  cursor: pointer; /* Đặt con trỏ chuột thành con trỏ tay */
+}
+
+#edit-author form button[type="submit"]:hover {
+  background-color: #3e8e41; /* Đặt màu nền cho button khi hover */
+}
+
+#edit-author  form label {
+  display: block; /* Hiển thị label theo dạng khối */
+  margin-bottom: 10px; /* Đặt khoảng cách dưới mỗi label */
+  font-size: 16px; /* Đặt cỡ chữ cho label */
+}
+
+.edit-author  {
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 999;
-  background-color: #f2f2f2;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  font-family: Arial, sans-serif;
-  font-size: 14px;
-  line-height: 1.5;
-  }
-
-  aside h2 {
-    margin-top: 0;
-    margin-bottom: 20px;
-    font-size: 24px;
-  }
-  
-  aside label {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: bold;
-    color: #333;
-  }
-  
-  aside input[type="text"],
-  aside input[type="tel"],
-  aside input[type="email"],
-  aside textarea {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    margin-bottom: 20px;
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    line-height: 1.5;
-  }
-  
-  aside input[type="submit"],
-  aside button {
-    background-color: #4CAF50;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    line-height: 1.5;
-    margin-right: 10px;
-  }
-  
-  aside button {
-    background-color: #f44336;
-  }
-  
-  aside button:focus,
-  aside input:focus {
-    outline: none;
-  }
-  
-  aside button:hover,
-  aside input[type="submit"]:hover {
-    background-color: #3e8e41;
-  }
-  
-  aside button:hover {
-    background-color: #b71c1c;
-  }
-
-
-  
-  
-  
+  z-index: 9999;
+  border-radius: 10px;
+}

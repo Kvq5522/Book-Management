@@ -25,6 +25,32 @@ const bookSchema = new Schema({
         type: Number,
         default: 0
     }
+}, {
+    timestamps: true
+});
+
+bookSchema.post('save', async (doc, next) => {   
+    const { Author } = require('./author.model');
+    const { Category } = require('./category.model');
+ 
+    try {
+        await Author.findOneAndUpdate({ name: doc.author }, { $inc: { products: 1 } }, { new: true })
+        await Category.findOneAndUpdate({ name: doc.category }, { $inc: { products: 1 } }, { new: true })
+        next();
+    } catch (e) {
+        next(e);
+    }
+});
+
+bookSchema.post('findOneAndDelete', async (doc, next) => {
+    const { Author } = require('./author.model');
+
+    try {
+        await Author.findOneAndUpdate({ name: doc.author, products: { $gte: 1 } }, { $inc: { products: -1 } }, { new: true })
+        next();
+    } catch (e) {
+        next(e);
+    }
 });
 
 const Book = mongoose.model('Book', bookSchema);

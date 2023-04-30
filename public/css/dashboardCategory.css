@@ -4,6 +4,7 @@
   justify-content: center; /* căn giữa theo chiều ngang */
   width: 100%;
   border-radius: 30px;
+  
 }
 .search-container input[type="text"] {
   width: 80%;
@@ -21,23 +22,163 @@
   border-radius: 30px;
   
 }
-  
-  input[type="text"] {
-    padding: 10px;
-    border: none;
-    width: 70%; /* chiếm 70% của bộ khung tìm kiếm */
-  }
-  h2 {
-    margin-bottom: 16px;
-  }
-  
 
-  /* căn lề đề mục */
-h2 {
-  margin-left: 10px;
+button.search:hover {
+  background-color: (var(--));
 }
 
-.edit-cate-button {
+#add-category{
+height: 300px;
+width: 500px; /* Đặt chiều rộng cho phần tử */
+margin: 0 auto; /* Đặt lề để căn giữa theo chiều ngang */
+padding: auto; /* Đặt khoảng cách giữa các phần tử bên trong phần tử */
+position: relative; /* Đặt vị trí để có thể sử dụng các thuộc tính top, bottom, left, right */
+top: 20%; /* Đặt vị trí theo chiều dọc */
+right: -15%;
+transform: translateY(-20%);
+background-color: #f2f2f2;
+box-shadow: 0px 0px 10px #888888; 
+
+}
+
+#add-category h2 {
+text-align: left;
+float: left;
+width: 50%;
+margin-top: 0; /* Xóa khoảng cách trên đầu tiêu đề */
+font-size: 24px; /* Đặt cỡ chữ cho tiêu đề */
+}
+#add-category form label {
+text-align: justify;
+}
+.form-container {
+clear: both;
+}
+#add-category form input {
+width: 100%;
+margin-bottom: 10px;
+}
+
+#add-category form button {
+display: block;
+margin: 10px auto;
+}
+#add-category form input[type="text"], #add-category form button[type="submit"] {
+padding: 8px; /* Đặt khoảng cách giữa các phần tử input và button */
+border-radius: 5px; /* Đặt bo góc cho input và button */
+border: none; /* Xóa viền cho input và button */
+font-size: 16px; /* Đặt cỡ chữ cho input và button */
+}
+
+#add-category form button[type="submit"] {
+background-color: #4CAF50; /* Đặt màu nền cho button */
+color: white; /* Đặt màu chữ cho button */
+cursor: pointer; /* Đặt con trỏ chuột thành con trỏ tay */
+}
+
+#add-category form button[type="submit"]:hover {
+background-color: #3e8e41; /* Đặt màu nền cho button khi hover */
+}
+
+#add-category form label {
+display: block; /* Hiển thị label theo dạng khối */
+ /* Đặt khoảng cách dưới mỗi label */
+font-size: 16px; /* Đặt cỡ chữ cho label */
+}
+
+.addcategory {
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+z-index: 9999;
+border-radius: 10px;
+}
+
+#close-add-btn {
+  float: right;
+}
+#add-category form button[type="submit"] {
+  float: right;
+  margin-right: 10px;
+}
+
+input[type="text"] {
+  padding: 10px;
+  border: none;
+  width: 70%; /* chiếm 70% của bộ khung tìm kiếm */
+}
+h2 {
+  margin-bottom: 16px;
+}
+
+#close-add-btn,
+#close-edit-btn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #fff;
+  background-color: #f44336;
+}
+
+
+form label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+form input[type=text] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 16px;
+}
+
+form input[type=submit] {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #fff;
+  background-color: #4CAF50;
+}
+
+table {
+  
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 12px;
+  
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  text-align: center;
+  color: #f2f2f2;
+  background-color: #27ae60;
+}
+tbody td{
+  text-align: center;
+}
+td {
+  background-color: #ffffff;
+}
+
+.edit-button, .delete-button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.edit-button {
   background-color: #4CAF50;
   align-items: center;
   justify-content: center;
@@ -45,165 +186,93 @@ h2 {
 
 }
 
-.delete-cate-button {
+.delete-button {
   background-color: #f44336;
   align-items: center;
   justify-content: center;
   
-
 }
-
-/* nút thêm mới */
-#add-category-button {
-  margin: 10px;
-  background-color: #27ae60;
-  color: #fff;
+#add-btn, #submit-add-btn {
+  padding: 8px 12px;
   border: none;
   border-radius: 4px;
-  padding: 10px 20px;
   cursor: pointer;
+  color: #fff;
+  background-color: var(--main-text-color);
+  margin-bottom: 16px;
+}
+#category-table td:nth-child(5) {
+  width: 100px;
 }
 
-/* bảng dữ liệu */
-#cate-table {
-  margin: 10px;
-  border-collapse: collapse;
-  width: 100%;
+#edit-category {
+  height: 300px;
+  width: 500px; /* Đặt chiều rộng cho phần tử */
+  margin: 0 auto; /* Đặt lề để căn giữa theo chiều ngang */
+  padding: 20px; /* Đặt khoảng cách giữa các phần tử bên trong phần tử */
+  position: relative; /* Đặt vị trí để có thể sử dụng các thuộc tính top, bottom, left, right */
+  top: 20%; /* Đặt vị trí theo chiều dọc */
+  right: -15%;
+  transform: translateY(-20%);
+  background-color: #f2f2f2;
+  box-shadow: 0px 0px 10px #888888; 
+
+}
+
+#edit-category  h2 {
   text-align: left;
+  float: left;
+  width: 50%;
+  margin-top: 0; /* Xóa khoảng cách trên đầu tiêu đề */
+  font-size: 24px; /* Đặt cỡ chữ cho tiêu đề */
 }
-
-/* đầu bảng */
-thead th {
-  text-align: center;
-  background-color: #27ae60;
-  color: #ffffff;
-  padding: 10px;
+#edit-category form label {
+  text-align: justify;
 }
-tbody td{
-  text-align: center;
-
+.form-container {
+  clear: both;
 }
-
-/* ô dữ liệu */
-td {
- 
-  padding: 10px;
-  background-color: #ffffff;
-}
-
-/* nút chỉnh sửa */
-.edit-cate-button {
-  background-color: #27ae60;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  padding: 10px 20px;
-  cursor: pointer;
-}
-
-/* nút xóa thể loại */
-#delete-category-btn {
-  background-color: #dc3545;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  padding: 10px 20px;
-  cursor: pointer;
-}
-
-/* Form Thêm mới */
-.category-add {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 9999;
-  background-color: #ffffff;
-  border-radius: 5px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-  padding: 20px;
-  display: none;
-  width: 400px;
-}
-
-.category-add h2 {
-  font-size: 1.5rem;
-  margin-bottom: 20px;
-}
-
-.category-add input[type="text"] {
+#edit-category form input {
   width: 100%;
-  border: 1px solid #cccccc;
-  border-radius: 5px;
-  padding: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
-
-
-.category-add button {
-  padding: 10px 20px;
-  margin-left: 10px;
-  border: none;
-  border-radius: 5px;
-  background-color: #27ae60;
-  color: #ffffff;
-  cursor: pointer;
+#edit-category form input[type="text"], #edit-category form button[type="submit"] {
+  padding: 8px; /* Đặt khoảng cách giữa các phần tử input và button */
+  border-radius: 5px; /* Đặt bo góc cho input và button */
+  border: none; /* Xóa viền cho input và button */
+  font-size: 16px; /* Đặt cỡ chữ cho input và button */
 }
-
-.category-add button:hover {
-  background-color: #27ae60;
-}
-
-/* Form sửa */
-.category-edit {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 9999;
-  background-color: #ffffff;
-  border-radius: 5px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-  padding: 20px;
-  display: none;
-  width: 400px;
-}
-
-.category-edit h2 {
-  font-size: 1.5rem;
-  margin-bottom: 20px;
-}
-
-.category-edit input[type="text"] {
-  width: 100%;
-  border: 1px solid #cccccc;
-  border-radius: 5px;
-  padding: 10px;
-  margin-bottom: 20px;
-}
-
 .button-container {
   display: flex;
   justify-content: flex-end;
 }
 
-.category-edit  button {
-  padding: 10px 20px;
+.button-container button {
   margin-left: 10px;
-  border: none;
-  border-radius: 5px;
-  background-color: #27ae60;
-  color: #ffffff;
-  cursor: pointer;
 }
 
-.category-edit  button:hover {
-  background-color: #3e8e41;
+#edit-category form button[type="submit"] {
+  background-color: #4CAF50; /* Đặt màu nền cho button */
+  color: white; /* Đặt màu chữ cho button */
+  cursor: pointer; /* Đặt con trỏ chuột thành con trỏ tay */
 }
 
+#edit-category form button[type="submit"]:hover {
+  background-color: #3e8e41; /* Đặt màu nền cho button khi hover */
+}
 
-  
-    
-  
-  
+#edit-category  form label {
+  display: block; /* Hiển thị label theo dạng khối */
+  margin-bottom: 10px; /* Đặt khoảng cách dưới mỗi label */
+  font-size: 16px; /* Đặt cỡ chữ cho label */
+}
+
+.edit-category  {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  border-radius: 10px;
+}
