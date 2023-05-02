@@ -1,7 +1,7 @@
 'use strict'
 
 const dotenv = require('dotenv');
-dotenv.config('../../.env');
+// dotenv.config('../../.env');
 
 const dev = {
     app: {
