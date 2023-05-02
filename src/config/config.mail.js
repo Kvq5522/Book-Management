@@ -1,5 +1,5 @@
 const dotenv = require('dotenv');
-dotenv.config('../../.env');
+// dotenv.config('../../.env');
 
 const mailConfig = {
     Mailer: process.env.MAIL_MAILER,
