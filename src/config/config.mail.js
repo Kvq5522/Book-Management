@@ -2,7 +2,7 @@ const dotenv = require('dotenv');
 dotenv.config('../../.env');
 
 const mailConfig = {
-    Mailer: process.env.MAILER,
+    Mailer: process.env.MAIL_MAILER,
     MailHost: process.env.MAIL_HOST,
     MailPort: process.env.MAIL_PORT,
     MailUsername: process.env.MAIL_USERNAME,
