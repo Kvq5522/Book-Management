@@ -23,7 +23,11 @@ class RenderController {
     }
 
     getBookPage = async (req, res) => {
-        res.render('dashboardBook', { bookList: await getBookList() });
+        res.render('dashboardBook', 
+        { bookList: await getBookList(),
+          authorList: await getAuthorList(),
+          categoryList: await getCategoryList() 
+        });
     }
     
     getCategoryPage = async (reg, res) =>{

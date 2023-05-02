@@ -72,11 +72,21 @@
                         </div>
                         <div class="form-row">
                           <label for="category">Thể loại:</label>
-                          <input type="text" id="add-category" name="add-category">
+                          <!-- <input type="text" id="add-category" name="add-category"> -->
+                          <select id="add-category" name="add-category">
+                            <% for (let i = 0; i < categoryList.length; i++) { %>
+                              <option value="<%= categoryList[i].name %>"><%= categoryList[i].name %></option>
+                            <% } %>
+                          </select>
                         </div>
                         <div class="form-row">
                           <label for="author">Tác giả:</label>
-                          <input type="text" id="add-author" name="add-author">
+                          <!-- <input type="text" id="add-author" name="add-author"> -->
+                          <select id="add-author" name="add-author">
+                            <% for (let i = 0; i < authorList.length; i++) { %>
+                              <option value="<%= authorList[i].name %>"><%= authorList[i].name %></option>
+                            <% } %>
+                          </select>
                         </div>
                         <div class="form-row">
                           <label for="number">Số lượng:</label>
@@ -142,11 +152,21 @@
                           </div>
                           <div class="form-row">
                             <label for="edit-category">Thể loại:</label>
-                            <input type="text" id="edit-category" name="edit-category">
+                            <!-- <input type="text" id="edit-category" name="edit-category"> -->
+                            <select id="edit-category" name="edit-category">
+                              <% for (let i = 0; i < categoryList.length; i++) { %>
+                                <option value="<%= categoryList[i].name %>"><%= categoryList[i].name %></option>
+                              <% } %>
+                            </select>
                           </div>
                           <div class="form-row">
                             <label for="edit-author">Tác giả:</label>
-                            <input type="text" id="edit-author" name="edit-author">
+                            <!-- <input type="text" id="edit-author" name="edit-author"> -->
+                            <select  id="edit-author" name="edit-author">
+                              <% for (let i = 0; i < authorList.length; i++) { %>
+                                <option value="<%= authorList[i].name %>"><%= authorList[i].name %></option>
+                              <% } %>
+                            </select>
                           </div>
                           <div class="form-row">
                             <label for="edit-number">Số lượng:</label>

@@ -103,7 +103,7 @@ submit_add_btn.addEventListener('click', async (event) => {
                         add_section.style.display = "none";
                         alert('Add book successfully');
                         let fetched = data.metadata;
-                        await addBookToTable(fetched.name, fetched.category, fetched.author, fetched.number, fetched.price);
+                        await addBookToTable(fetched.name, fetched.category, fetched.author, fetched.quantity, fetched.price);
 
                         document.getElementById("add-name").value = '';
                         document.getElementById("add-category").value = '';
@@ -157,8 +157,7 @@ submit_edit_btn.addEventListener('click', async (event) => {
                     edit_section.style.display = "none";
                     alert('Edit book successfully');
                     let edited = data.metadata;
-                    console.log(edited);
-                    await editBookInTable(oldName, edited.name, edited.category, edited.author, edited.number, edited.price);
+                    await editBookInTable(oldName, edited.name, edited.category, edited.author, edited.quantity, edited.price);
                 } else {
                     alert('Edit book failed');
                 }

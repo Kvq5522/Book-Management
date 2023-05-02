@@ -63,7 +63,7 @@ margin-bottom: 10px;
 display: block;
 margin: 10px auto;
 }
-#add-book form input[type="text"], #add-book form button[type="submit"] {
+#add-book form input[type="text"], #add-book form button[type="submit"], #add-book form select {
 padding: 8px; /* Đặt khoảng cách giữa các phần tử input và button */
 border-radius: 5px; /* Đặt bo góc cho input và button */
 border: none; /* Xóa viền cho input và button */
@@ -108,6 +108,13 @@ input[type="text"] {
   border: none;
   width: 70%; /* chiếm 70% của bộ khung tìm kiếm */
 }
+
+select {
+  padding: 10px;
+  border: none;
+  width: 70%; /* chiếm 70% của bộ khung tìm kiếm */
+}
+
 h2 {
   margin-bottom: 16px;
 }
@@ -128,7 +135,7 @@ form label {
   margin-bottom: 8px;
 }
 
-form input[type=text] {
+form input[type=text], form select {
   width: 100%;
   padding: 8px;
   border: 1px solid #ccc;
@@ -236,7 +243,7 @@ td {
   margin-bottom: 10px;
 }
 
-#edit-book form input[type="text"], #edit-book form button[type="submit"] {
+#edit-book form input[type="text"], #edit-book form button[type="submit"], #edit-book form select {
   padding: 8px; /* Đặt khoảng cách giữa các phần tử input và button */
   border-radius: 5px; /* Đặt bo góc cho input và button */
   border: none; /* Xóa viền cho input và button */

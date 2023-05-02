@@ -20,16 +20,6 @@ const authorSchema = new Schema({
     timestamps: true
 }); 
 
-authorSchema.post('update', async (doc, next) => {
-    const { Book } = require('./book.model');
-
-    try {
-        await Book.updateMany({ author: doc.name }, { author: doc.name }).catch(err => err);
-    } catch(e) {
-        next(e);
-    }
-});
-
 authorSchema.pre('findOneAndDelete', async function (next) {
     const { Book } = require('./book.model');
 

@@ -1,6 +1,8 @@
 'use strict';
 
 const { Book } = require('../models/book.model');
+const { Author } = require('../models/author.model');
+const { Category } = require('../models/category.model');
 
 class AccessService {
     static getBookList = async () => {
@@ -61,12 +63,36 @@ class AccessService {
             if (field.value) {
                 updateInfo[field.key] = field.value;
             }
-        }
+        }  
 
-        return Book.findOneAndUpdate({ name: oldName }, updateInfo, { new: true }).catch((error) => {
-            console.log(error);
+        try {
+            const book = await Book.findOne({ name: oldName });
+            const curAuthor = book.author;
+            const curCategory = book.category;
+
+            const editedBook = await Book.findOneAndUpdate({ name: oldName }, updateInfo, { new: true });
+            
+            if (curAuthor != author) {
+                await Author.findOneAndUpdate({ name: curAuthor, products: { $gte: 1 } }, 
+                    { $inc: {products : -1} });
+
+                await Author.findOneAndUpdate({ name: author },
+                    { $inc: {products : 1} });
+            }
+
+            if (curCategory != category) {
+                await Category.findOneAndUpdate({ name: curCategory, products: { $gte: 1 } },
+                    { $inc: {products : -1} });
+                
+                await Category.findOneAndUpdate({ name: category },
+                    { $inc: {products : 1} });
+            }
+
+            return editedBook;
+        } catch (e) {
+            console.log(e);
             return null;
-        });
+        }
     }
 
     static deleteBook = async (name) => {

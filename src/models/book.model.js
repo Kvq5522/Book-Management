@@ -33,24 +33,34 @@ bookSchema.post('save', async (doc, next) => {
     const { Author } = require('./author.model');
     const { Category } = require('./category.model');
  
-    try {
-        await Author.findOneAndUpdate({ name: doc.author }, { $inc: { products: 1 } }, { new: true })
-        await Category.findOneAndUpdate({ name: doc.category }, { $inc: { products: 1 } }, { new: true })
-        next();
-    } catch (e) {
-        next(e);
-    }
+    await Author.findOneAndUpdate(
+        { name: doc.author }, 
+        { $inc: { products: 1 } }, 
+        { new: true })
+        .catch((err) => { return null });
+
+    await Category.findOneAndUpdate(
+        { name: doc.category }, 
+        { $inc: { products: 1 } }, 
+        { new: true })
+        .catch((err) => { return null });
 });
 
 bookSchema.post('findOneAndDelete', async (doc, next) => {
     const { Author } = require('./author.model');
+    const { Category } = require('./category.model');
 
-    try {
-        await Author.findOneAndUpdate({ name: doc.author, products: { $gte: 1 } }, { $inc: { products: -1 } }, { new: true })
-        next();
-    } catch (e) {
-        next(e);
-    }
+    await Author.findOneAndUpdate(
+        { name: doc.author, products: { $gte: 1 } }, 
+        { $inc: { products: -1 } }, 
+        { new: true })
+        .catch((err) => { return null });
+
+    await Category.findOneAndUpdate(
+        { name: doc.category, products: { $gte: 1 } }, 
+        { $inc: { products: -1 } }, 
+        { new: true })
+        .catch((err) => { return null });
 });
 
 const Book = mongoose.model('Book', bookSchema);
